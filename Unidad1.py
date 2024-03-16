@@ -2,10 +2,13 @@ def  cargarNum():
     lista = []
     i = 0
     while (i<3):
-        print("Ingrese un numero")
+        print("Ingrese un numero ", end="")
         numero = int(input())
-        lista.append(numero)
-        i+=1
+        if(numero < 0):
+            print("Ingrese un numero positivo")
+        else:
+            lista.append(numero)
+            i+=1
     return lista
 
 def buscarMayor(lista):
@@ -21,12 +24,16 @@ def buscarMayor(lista):
     if(encontrado >1):
         estricto = True
     if (estricto == False):
-        return -1
-    else:
         return mayor
+    else:
+        return -1
     
 
 result = cargarNum()
-print(result)
 
-buscarMayor(result)
+result2 = buscarMayor(result)
+if (result2 != -1):
+    print("El mayor estricto es ",end ="")
+    print(result2)
+else:
+    print("No se ingresò un nùmero mayor estricto")
