@@ -3,10 +3,10 @@ se puede obtener multiplicando dos números naturales consecutivos. Por ejemplo 
 naturales = [1,2,3,4,5,6,7,8,9]
 def oblongo(numero,lista):
     esOblongo = False
-    for i in range(len(lista)):
+    for i in range(len(lista)-1):
         if(numero== naturales[i]*naturales[i+1]):
             esOblongo = True
-        return esOblongo
+    return esOblongo
 numero = int(input("Ingrese el numero para saber si es oblongo"))
 verificar = oblongo(numero,naturales)
 if(verificar == True):
