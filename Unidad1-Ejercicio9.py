@@ -18,16 +18,30 @@ inferior al 80%; en caso contrario el camión no serán despachado por su alto c
 #Generar numero entero entre 150 y 350g
 #Ocupación del camión, no inferior al 80%
 import random
-cargaMaxCamion = 500
+cargaMaxCamion = 500000
+cargaCamion = 0
 cargaMaxCajon = 100
+camiones = 0
 cajones = 0
 cantidadNaranjas = int(input("Ingrese la cantidad de naranjas"))
 sumaNaranjas = 0
 cantidadJugo = 0
 naranjasSobras = 0
+camionCargado = False
+Pesototal = 0
 i= 0
 while i < cantidadNaranjas:
     naranjas = random.randint(150,350)
+    Pesototal += naranjas
+    cargaCamion += naranjas
+    if camionCargado == False:
+        if cargaCamion >=cargaMaxCamion*0.8:
+            camiones +=1
+            camionCargado = True
+    if cargaCamion >=cargaMaxCamion:
+        cargaCamion = 0
+        camionCargado = False
+
     if(naranjas<200 or naranjas>300):
         cantidadJugo +=1
     else:
@@ -35,9 +49,11 @@ while i < cantidadNaranjas:
     if(sumaNaranjas == cargaMaxCajon):
         cajones +=1
         sumaNaranjas = 0
-    naranjasSobras = cantidadNaranjas - cantidadJugo - (cajones*100)
     i+=1
+naranjasSobras = cantidadNaranjas-cantidadJugo-(cajones*100)
 
 print(f"Cajones = {cajones}")
 print(f"Cantidad naranjas para jugo = {cantidadJugo}")
-print(f"Sobraron {naranjasSobras} naranjas")
+print(f"Sobraron {naranjasSobras} naranjas para el próximo transporte")
+print(f"Se necesitan {camiones} camiones para transportar")
+print(Pesototal)
