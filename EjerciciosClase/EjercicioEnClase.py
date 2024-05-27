@@ -15,11 +15,11 @@ def cargarDiccionario(cantidadCargar):
     datosNotasAlumnos = []
     for i in range(cantidadCargar):
         alumno = {}
-        nombre = input("Ingrese el nombre del alumno")
+        nombre = input("Ingrese el nombre del alumno ")
         alumno["Nombre"] = nombre
-        nota = int(input("Ingrese la nota del alumno entre 1 y 10"))
+        nota = int(input("Ingrese la nota del alumno entre 1 y 10 "))
         while nota < 1 or nota > 10:
-            nota = int(input("Ingrese una nota válida entre 1 y 10"))
+            nota = int(input("Ingrese una nota válida entre 1 y 10 "))
         alumno["Nota"] = nota
         datosNotasAlumnos.append(alumno)
     return datosNotasAlumnos

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "edad": "22",
+        "idioma": [
+            "igles",
+            "aleman"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "González",
+        "edad": "20",
+        "idioma": [
+            "español",
+            "ruso"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Carlos",
+        "apellido": "Rodríguez",
+        "edad": "26",
+        "idioma": [
+            "hebre",
+            "irish"
+        ]
+    },
+    {
+        "id": "10",
+        "Nombre": "Joni",
+        "Apellido": "Dominguez",
+        "Edad": "27",
+        "Idiomas": [
+            "Español",
+            "Ingles"
+        ]
+    }
+]
