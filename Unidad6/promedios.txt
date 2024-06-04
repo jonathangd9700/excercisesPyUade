@@ -1,4 +1,7 @@
 Voley
-585
+195.0
 Basquet
-603
+201.0Voley
+195.0
+Basquet
+201.0
