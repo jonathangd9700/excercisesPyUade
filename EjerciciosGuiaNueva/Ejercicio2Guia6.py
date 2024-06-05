@@ -1,5 +1,5 @@
 import random
-
+ruta = "C:\\Users\\HP\\Desktop\\UADE\\Progra1\\excersicesPyUade\\EjerciciosGuiaNueva\\lluvias.txt"
 
 def cargarArchivo(cantidad):
     i = 0
@@ -17,11 +17,27 @@ def cargarArchivo(cantidad):
             datos = f.write(str(dia)+";"+str(mes)+";"+str(lluvia) + "\n")
         i+=1
 
+def imprimirTotalLluvia():
+    with open (ruta, "r") as f:
+        datos = f.readlines()
+        suma = 0
+        for i in datos:
+            i = i.split(";")
+            i = i[2].split("\n")
+            suma += int(i[0])
+            print(i)
+        print(suma)
+        return suma
+            
+
 def main():
     while True:
         try:
-            cantidad = int(input("Ingrese cuantos datos desea generar: "))
-            cargarArchivo(cantidad)
+            resultado = imprimirTotalLluvia()
+#             cantidad = int(input("Ingrese cuantos datos desea generar: "))
+#             cargarArchivo(cantidad)
+            print(f"El total de las lluvias es: {resultado}")
+            
             break;
         except ValueError as e:
             print("Valor incorrecto")
