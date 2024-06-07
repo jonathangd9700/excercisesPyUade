@@ -1,0 +1,5 @@
+lista = ["asdñlas"]
+
+    
+if lista[0][0] == "a":
+    print("chau")
